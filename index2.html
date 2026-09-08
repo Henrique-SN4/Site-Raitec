@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>RAIPÉDIA - RAITEC</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family:
+        'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+}
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+
+    --bg-color-outer: #e6ebf5;
+    --bg-color-inner: #ffffff;
+
+    --header-footer-bg: #757575;
+
+    --text-main: #333333;
+    --text-secondary: #666666;
+
+    --gray-light: #e0e0e0;
+    --gray-medium: #c0c0c0;
+
+    --green: #4caf50;
+    --red: #f44336;
+    --yellow: #ffeb3b;
+
+    --cyan: #00e5ff;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    background-color:
+        var(--bg-color-outer);
+
+    color:
+        var(--text-main);
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.app-container {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    min-height: 100vh;
+
+    background-color:
+        var(--bg-color-inner);
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow:
+        0 0 20px
+        rgba(0,0,0,0.05);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    background-color:
+        var(--header-footer-bg);
+
+    color: white;
+
+    padding:
+        1.5rem 3rem;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.logo-container {
+
+    display: flex;
+
+    align-items: center;
+
+    cursor: pointer;
+}
+
+
+.logo-img {
+
+    height: 35px;
+
+    width: auto;
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.4rem;
+}
+
+
+.nav-links a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+
+.nav-links a:hover {
+
+    color:
+        var(--cyan);
+}
+
+
+/* =========================================================
+   PESQUISA HEADER
+========================================================= */
+
+.header-search {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.header-search-bar {
+
+    width: 250px;
+
+    padding:
+        0.55rem 1.2rem;
+
+    border: none;
+
+    border-radius: 20px;
+
+    outline: none;
+
+    background-color:
+        var(--gray-light);
+
+    transition:
+        width 0.3s ease;
+}
+
+
+.header-search-bar:focus {
+
+    width: 320px;
+
+    background-color: white;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main-content {
+
+    flex: 1;
+
+    padding:
+        4rem;
+}
+
+
+/* =========================================================
+   CABEÇALHOS
+========================================================= */
+
+.raipedia-header {
+
+    text-align: center;
+
+    margin-bottom: 2.5rem;
+}
+
+
+.raipedia-header h1 {
+
+    font-size: 3rem;
+
+    font-weight: 500;
+
+    margin-bottom: 0.7rem;
+}
+
+
+.raipedia-header p {
+
+    color:
+        var(--text-secondary);
+}
+
+
+.page-title {
+
+    text-align: center;
+
+    font-size: 2.4rem;
+
+    font-weight: 500;
+
+    margin-bottom: 0.7rem;
+}
+
+
+.page-description {
+
+    text-align: center;
+
+    color:
+        var(--text-secondary);
+
+    max-width: 700px;
+
+    margin:
+        0 auto 3rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.search-bar {
+
+    width: 100%;
+
+    padding:
+        1rem 1.5rem;
+
+    border: none;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    background-color:
+        var(--gray-light);
+
+    font-size: 1rem;
+
+    margin-bottom: 3rem;
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.knowledge-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1.5rem;
+
+    margin-bottom: 4rem;
+}
+
+
+.knowledge-section {
+
+    background-color:
+        #f5f5f5;
+
+    border-radius: 8px;
+
+    padding: 2rem;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.knowledge-section:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.08);
+}
+
+
+.knowledge-title {
+
+    text-align: center;
+
+    font-size: 1.6rem;
+
+    font-weight: 500;
+
+    padding-bottom: 1rem;
+
+    margin-bottom: 1.5rem;
+
+    border-bottom:
+        3px solid
+        var(--gray-medium);
+}
+
+
+.learn .knowledge-title {
+    border-color: var(--green);
+}
+
+
+.know .knowledge-title {
+    border-color: var(--yellow);
+}
+
+
+.practice .knowledge-title {
+    border-color: var(--red);
+}
+
+
+.section-description {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 1.5rem;
+
+    text-align: center;
+}
+
+
+.knowledge-items {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.8rem;
+}
+
+
+.knowledge-item {
+
+    background-color: white;
+
+    padding:
+        1rem 1.2rem;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s,
+        transform 0.2s;
+}
+
+
+.knowledge-item:hover {
+
+    background-color:
+        var(--gray-light);
+
+    transform:
+        translateX(4px);
+}
+
+
+.knowledge-item strong {
+
+    display: block;
+
+    margin-bottom: 0.25rem;
+}
+
+
+.knowledge-item small {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   ÁREA DE MEMBROS
+========================================================= */
+
+.members-section {
+
+    background-color:
+        #eeeeee;
+
+    border-radius: 8px;
+
+    padding: 2.5rem;
+
+    margin-top: 1rem;
+}
+
+
+.members-title {
+
+    text-align: center;
+
+    font-size: 1.7rem;
+
+    font-weight: 500;
+
+    margin-bottom: 2rem;
+}
+
+
+.members-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1rem;
+}
+
+
+.member-item {
+
+    background-color: white;
+
+    padding: 1.3rem 1rem;
+
+    border-radius: 5px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.member-item:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+
+.member-item strong {
+
+    display: block;
+
+    font-size: 0.9rem;
+}
+
+
+.member-item span {
+
+    display: block;
+
+    margin-top: 0.4rem;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   CARROSSEL
+========================================================= */
+
+.carousel-section {
+
+    margin-bottom: 3rem;
+}
+
+
+.category-title {
+
+    font-size: 1.4rem;
+
+    font-weight: 500;
+
+    margin-bottom: 1rem;
+
+    padding-bottom: 0.7rem;
+
+    border-bottom:
+        2px solid
+        var(--gray-light);
+}
+
+
+.carousel-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.carousel {
+
+    display: flex;
+
+    gap: 1.5rem;
+
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+
+    flex: 1;
+
+    padding:
+        10px 5px 20px;
+}
+
+
+.nav-arrow {
+
+    background: none;
+
+    border: none;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    padding: 10px;
+
+    color:
+        var(--text-main);
+}
+
+
+.nav-arrow:hover {
+
+    color:
+        var(--cyan);
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+
+    min-width: 220px;
+
+    background-color:
+        #f2f2f2;
+
+    border-radius: 5px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.12);
+}
+
+
+.card-img-placeholder {
+
+    width: 100%;
+
+    height: 120px;
+
+    background-color:
+        #8a8a8a;
+
+    margin-bottom: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 0.8rem;
+}
+
+
+.color-line {
+
+    height: 3px;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+}
+
+
+.color-line.green {
+    background-color:
+        var(--green);
+}
+
+
+.color-line.red {
+    background-color:
+        var(--red);
+}
+
+
+.color-line.yellow {
+    background-color:
+        var(--yellow);
+}
+
+
+.card h3 {
+
+    font-size: 1.05rem;
+
+    margin-bottom: 7px;
+}
+
+
+.card p {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.78rem;
+
+    line-height: 1.4;
+}
+
+
+.badges {
+
+    display: flex;
+
+    gap: 5px;
+
+    margin-bottom: 8px;
+}
+
+
+.badge {
+
+    background-color:
+        #d9d9d9;
+
+    font-size: 0.65rem;
+
+    padding:
+        3px 6px;
+
+    border-radius: 10px;
+
+    color:
+        #555;
+}
+
+
+/* =========================================================
+   PÁGINA DA CAPACITAÇÃO
+========================================================= */
+
+.article-container {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding:
+        2rem 0;
+}
+
+
+.article-title {
+
+    text-align: center;
+
+    font-size: 2.5rem;
+
+    font-weight: 500;
+
+    margin-bottom: 3rem;
+}
+
+
+.article-step {
+
+    display: none;
+
+    animation:
+        fadeIn 0.4s ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+.article-section {
+
+    margin-bottom: 2rem;
+}
+
+
+.article-section h2 {
+
+    font-size: 1.4rem;
+
+    font-weight: 500;
+
+    margin-bottom: 0.7rem;
+}
+
+
+.article-section h3 {
+
+    font-size: 1.1rem;
+
+    margin:
+        1.5rem 0 0.5rem;
+}
+
+
+.article-section p {
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+    text-align: justify;
+
+    margin-bottom: 1rem;
+}
+
+
+.article-section ul {
+
+    margin-left: 1.5rem;
+
+    line-height: 1.8;
+}
+
+
+.callout-box {
+
+    background-color:
+        var(--gray-light);
+
+    padding:
+        1.5rem;
+
+    margin:
+        2rem auto;
+
+    border-left:
+        4px solid
+        var(--cyan);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO DA CAPACITAÇÃO
+========================================================= */
+
+.article-navigation {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-top: 4rem;
+
+    padding-bottom: 1rem;
+
+    border-bottom:
+        1px solid
+        var(--gray-medium);
+}
+
+
+.article-navigation button {
+
+    background-color:
+        var(--gray-light);
+
+    border: none;
+
+    padding:
+        0.7rem 1.5rem;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+}
+
+
+.article-navigation button:hover {
+
+    background-color:
+        #d0d0d0;
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR
+========================================================= */
+
+.back-button {
+
+    display: inline-block;
+
+    margin-bottom: 2rem;
+
+    padding:
+        0.6rem 1rem;
+
+    border: none;
+
+    background-color:
+        var(--gray-light);
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+}
+
+
+.back-button:hover {
+
+    background-color:
+        #d0d0d0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    background-color:
+        var(--header-footer-bg);
+
+    color: white;
+
+    padding:
+        2rem 3rem;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+}
+
+
+.footer-info p {
+
+    font-size: 0.8rem;
+
+    margin-bottom: 0.5rem;
+}
+
+
+.footer-info a {
+
+    color: white;
+}
+
+
+.social-icons {
+
+    display: flex;
+
+    gap: 1rem;
+}
+
+
+.social-icon {
+
+    width: 24px;
+
+    height: 24px;
+
+    background-color:
+        rgba(255,255,255,0.2);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .knowledge-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .members-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .main-content {
+
+        padding:
+            2rem;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+
+        flex-wrap: wrap;
+
+        padding:
+            1.2rem;
+    }
+
+
+    .nav-links {
+
+        display: none;
+    }
+
+
+    .header-search {
+
+        order: 3;
+
+        flex-basis: 100%;
+    }
+
+
+    .header-search-bar {
+
+        width: 100%;
+    }
+
+
+    .members-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .raipedia-header h1 {
+
+        font-size: 2.2rem;
+    }
+
+
+    .article-title {
+
+        font-size: 2rem;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="app-container">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+
+    <div
+        class="logo-container"
+        onclick="showPage('home-page')"
+    >
+
+        <img
+            src="logo raitec.png"
+            alt="Logo RAITEC"
+            class="logo-img"
+        >
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a onclick="showPage('home-page')">
+            INÍCIO
+        </a>
+
+        <a onclick="showPage('capacitacoes-page')">
+            CAPACITAÇÕES
+        </a>
+
+<a onclick="showPage('praticar-page')">PRATICAR</a>
+
+    </nav>
+
+
+    <div class="header-search">
+
+        <input
+            class="header-search-bar"
+            type="text"
+            placeholder="Pesquisar na RAIPÉDIA..."
+        >
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a>
+            SOBRE
+        </a>
+
+        <a>
+            CONTATO
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HOME
+========================================================= -->
+
+<main
+    id="home-page"
+    class="main-content"
+>
+
+
+    <section class="raipedia-header">
+
+        <h1>
+            RAIPÉDIA
+        </h1>
+
+        <p>
+            Conhecimento, capacitação e prática dentro do RAITEC.
+        </p>
+
+    </section>
+
+
+    <input
+        class="search-bar"
+        type="text"
+        placeholder="O que você está procurando?"
+    >
+
+
+
+    <!-- =====================================================
+         TRÊS ÁREAS
+    ====================================================== -->
+
+    <section class="knowledge-grid">
+
+
+        <!-- =================================================
+             APRENDER
+        ================================================== -->
+
+        <div class="knowledge-section learn">
+
+            <h2 class="knowledge-title">
+                APRENDER
+            </h2>
+
+
+            <p class="section-description">
+
+                Desenvolva conhecimentos através
+                das capacitações oferecidas pelo RAITEC.
+
+            </p>
+
+
+            <div class="knowledge-items">
+
+                <div
+                    class="knowledge-item"
+                    onclick="showPage('capacitacoes-page')"
+                >
+
+                    <strong>
+                        Capacitações
+                    </strong>
+
+                    <small>
+
+                        Programação, eletrônica,
+                        sistemas embarcados,
+                        ferramentas e tecnologias.
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONHECER
+        ================================================== -->
+
+        <div class="knowledge-section know">
+
+            <h2 class="knowledge-title">
+                CONHECER
+            </h2>
+
+
+            <p class="section-description">
+
+                Conheça conteúdos e experiências
+                produzidos pelo RAITEC.
+
+            </p>
+
+
+            <div class="knowledge-items">
+
+                <div
+                    class="knowledge-item"
+                    style="text-align:center; cursor:default;"
+                >
+
+                    <strong>
+                        📚 Artigos
+                    </strong>
+
+                    <small>
+
+                        Esta seção estará
+                        disponível em breve.
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PRATICAR
+        ================================================== -->
+
+        <div class="knowledge-section practice">
+    <h2 class="knowledge-title">PRATICAR</h2>
+    <p class="section-description">Coloque seus conhecimentos em prática através dos projetos disponibilizados pelo RAITEC.</p>
+    
+    <div class="knowledge-items">
+        <!-- ITEM 1: INOVAÇÃO -->
+        <div class="knowledge-item" onclick="showPage('praticar-page')">
+            <strong>Módulos da Inovação</strong>
+            <small>Projetos e atividades de inovação.</small>
+        </div>
+
+        <!-- ITEM 2: TÉCNICO -->
+        <div class="knowledge-item" onclick="showPage('praticar-page', 'sec-tecnico')">
+            <strong>Compêndio do Técnico</strong>
+            <small>Projetos voltados à formação técnica.</small>
+        </div>
+
+        <!-- ITEM 3: APOIO -->
+        <div class="knowledge-item" onclick="showPage('praticar-page', 'sec-apoio')">
+            <strong>Projetos do Apoio</strong>
+            <small>Projetos desenvolvidos nas atividades de apoio.</small>
+        </div>
+    </div>
+</div>
+
+
+    </section>
+
+
+
+
+</main>
+
+
+
+<!-- =========================================================
+     CAPACITAÇÕES
+========================================================= -->
+
+<main
+    id="capacitacoes-page"
+    class="main-content"
+    style="display:none;"
+>
+
+
+    <button
+        class="back-button"
+        onclick="showPage('home-page')"
+    >
+        ← Voltar
+    </button>
+
+
+    <h1 class="page-title">
+        Capacitações
+    </h1>
+
+
+    <p class="page-description">
+
+        Escolha uma capacitação para começar
+        sua formação.
+
+    </p>
+
+
+
+    <!-- =====================================================
+         DESENVOLVIMENTO E PROGRAMAÇÃO
+    ====================================================== -->
+
+    <section class="carousel-section">
+
+        <h2 class="category-title">
+
+            Desenvolvimento e Programação
+
+        </h2>
+
+
+        <div class="carousel-wrapper">
+
+
+            <button
+                class="nav-arrow"
+                onclick="
+                    scrollCarousel(
+                        'programacao-carousel',
+                        -300
+                    )
+                "
+            >
+                ‹
+            </button>
+
+
+            <div
+                class="carousel"
+                id="programacao-carousel"
+            >
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('python', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        PYTHON
+                    </div>
+
+                    <div class="color-line green"></div>
+
+                    <h3>
+                        Python
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Programação
+                        </span>
+
+                        <span class="badge">
+                            Básico
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Introdução à programação
+                        utilizando Python.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('java', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        JAVA
+                    </div>
+
+                    <div class="color-line red"></div>
+
+                    <h3>
+                        Java
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Programação
+                        </span>
+
+                        <span class="badge">
+                            POO
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Fundamentos da linguagem
+                        Java e orientação a objetos.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('cpp', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        C / C++
+                    </div>
+
+                    <div class="color-line yellow"></div>
+
+                    <h3>
+                        C/C++
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Programação
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Fundamentos de C e C++.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('flutter')"
+                >
+
+                    <div class="card-img-placeholder">
+                        DART
+                    </div>
+
+                    <div class="color-line green"></div>
+
+                    <h3>
+                        Dart e Flutter
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Mobile
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Desenvolvimento de aplicações
+                        com Dart e Flutter.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('julia', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        JULIA
+                    </div>
+
+                    <div class="color-line red"></div>
+
+                    <h3>
+                        Julia
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Computação científica
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Programação científica
+                        utilizando Julia.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('web')"
+                >
+
+                    <div class="card-img-placeholder">
+                        WEB
+                    </div>
+
+                    <div class="color-line yellow"></div>
+
+                    <h3>
+                        HTML, CSS e JavaScript
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Web
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Desenvolvimento
+                        para a web.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="nav-arrow"
+                onclick="
+                    scrollCarousel(
+                        'programacao-carousel',
+                        300
+                    )
+                "
+            >
+                ›
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ELETRÔNICA
+    ====================================================== -->
+
+    <section class="carousel-section">
+
+        <h2 class="category-title">
+
+            Eletrônica e Sistemas Embarcados
+
+        </h2>
+
+
+        <div class="carousel-wrapper">
+
+
+            <button
+                class="nav-arrow"
+                onclick="
+                    scrollCarousel(
+                        'eletronica-carousel',
+                        -300
+                    )
+                "
+            >
+                ‹
+            </button>
+
+
+            <div
+                class="carousel"
+                id="eletronica-carousel"
+            >
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('arduino', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        ARDUINO
+                    </div>
+
+                    <div class="color-line green"></div>
+
+                    <h3>
+                        Arduino
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Eletrônica
+                        </span>
+
+                        <span class="badge">
+                            Embarcados
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Programação e prototipagem
+                        com Arduino.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('esp32', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        ESP32
+                    </div>
+
+                    <div class="color-line red"></div>
+
+                    <h3>
+                        ESP32
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Embarcados
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Sistemas embarcados
+                        e conectividade.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('raspberry', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        RASPBERRY PI
+                    </div>
+
+                    <div class="color-line yellow"></div>
+
+                    <h3>
+                        Raspberry Pi
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Linux
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Computação embarcada
+                        com Raspberry Pi.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="nav-arrow"
+                onclick="
+                    scrollCarousel(
+                        'eletronica-carousel',
+                        300
+                    )
+                "
+            >
+                ›
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FERRAMENTAS
+    ====================================================== -->
+
+    <section class="carousel-section">
+
+        <h2 class="category-title">
+
+            Ferramentas e Tecnologias
+
+        </h2>
+
+
+        <div class="carousel-wrapper">
+
+
+            <button
+                class="nav-arrow"
+                onclick="
+                    scrollCarousel(
+                        'ferramentas-carousel',
+                        -300
+                    )
+                "
+            >
+                ‹
+            </button>
+
+
+            <div
+                class="carousel"
+                id="ferramentas-carousel"
+            >
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('git', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        GIT
+                    </div>
+
+                    <div class="color-line green"></div>
+
+                    <h3>
+                        Git e GitHub
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Desenvolvimento
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Controle de versão
+                        e colaboração.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('latex', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        LaTeX
+                    </div>
+
+                    <div class="color-line red"></div>
+
+                    <h3>
+                        LaTeX
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Técnico
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Documentação técnica
+                        e científica.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="card"
+                    onclick="openCourse('canva', 'capacitacoes-page')"
+                >
+
+                    <div class="card-img-placeholder">
+                        CANVA
+                    </div>
+
+                    <div class="color-line yellow"></div>
+
+                    <h3>
+                        Canva
+                    </h3>
+
+                    <div class="badges">
+
+                        <span class="badge">
+                            Design
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Criação de materiais
+                        visuais.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="nav-arrow"
+                onclick="
+                    scrollCarousel(
+                        'ferramentas-carousel',
+                        300
+                    )
+                "
+            >
+                ›
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+<!-- =========================================================
+     PRATICAR
+========================================================= -->
+<main id="praticar-page" class="main-content" style="display:none;">
+    <button class="back-button" onclick="showPage('home-page')">← Voltar</button>
+    <h1 class="page-title">Praticar</h1>
+    <p class="page-description">Coloque seus conhecimentos em prática com os projetos e módulos.</p>
+
+    <!-- SEÇÃO 1: INOVAÇÃO -->
+    <section id="sec-inovacao" class="carousel-section">
+        <h2 class="category-title">Inovação</h2>
+        <div class="carousel-wrapper">
+            <button class="nav-arrow" onclick="scrollCarousel('inovacao-carousel', -300)">‹</button>
+            <div class="carousel" id="inovacao-carousel">
+                <!-- Card Inovação -->
+                <div class="card" onclick="openCourse('modulo_inovacao', 'praticar-page')">
+                    <div class="card-img-placeholder" style="background-color: #4a90e2;">INOVAÇÃO</div>
+                    <div class="color-line red"></div>
+                    <h3>Módulos da Inovação</h3>
+                    <div class="badges">
+                        <span class="badge">Módulos</span><span class="badge">Inovação</span>
+                    </div>
+                    <p>Projetos e atividades de inovação aplicada.</p>
+                </div>
+            </div>
+            <button class="nav-arrow" onclick="scrollCarousel('inovacao-carousel', 300)">›</button>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: TÉCNICO -->
+    <section id="sec-tecnico" class="carousel-section" style="scroll-margin-top: 300px;">
+        <h2 class="category-title">Técnico</h2>
+        <div class="carousel-wrapper">
+            <button class="nav-arrow" onclick="scrollCarousel('tecnico-carousel', -300)">‹</button>
+            <div class="carousel" id="tecnico-carousel">
+                <!-- Card Técnico -->
+                <div class="card" onclick="openCourse('compendio_tecnico', 'praticar-page')">
+                    <div class="card-img-placeholder" style="background-color: #f39c12;">TÉCNICO</div>
+                    <div class="color-line yellow"></div>
+                    <h3>Compêndio do Técnico</h3>
+                    <div class="badges">
+                        <span class="badge">Compêndio</span><span class="badge">Técnico</span>
+                    </div>
+                    <p>Projetos voltados à formação técnica e montagem.</p>
+                </div>
+            </div>
+            <button class="nav-arrow" onclick="scrollCarousel('tecnico-carousel', 300)">›</button>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 3: APOIO -->
+    <section id="sec-apoio" class="carousel-section">
+        <h2 class="category-title">Apoio</h2>
+        <div class="carousel-wrapper">
+            <button class="nav-arrow" onclick="scrollCarousel('apoio-carousel', -300)">‹</button>
+            <div class="carousel" id="apoio-carousel">
+                <!-- Card Apoio -->
+                <div class="card" onclick="openCourse('projetos_apoio', 'praticar-page')">
+                    <div class="card-img-placeholder" style="background-color: #27ae60;">APOIO</div>
+                    <div class="color-line green"></div>
+                    <h3>Projetos do Apoio</h3>
+                    <div class="badges">
+                        <span class="badge">Projetos</span><span class="badge">Apoio</span>
+                    </div>
+                    <p>Projetos desenvolvidos nas atividades de apoio.</p>
+                </div>
+            </div>
+            <button class="nav-arrow" onclick="scrollCarousel('apoio-carousel', 300)">›</button>
+        </div>
+    </section>
+</main>
+
+<!-- =========================================================
+     PÁGINA DE CAPACITAÇÃO
+========================================================= -->
+
+<main
+    id="course-page"
+    class="main-content"
+    style="display:none;"
+>
+
+
+    <button id="btn-back-dynamic" class="back-button" onclick="goBackToCategory()">← Voltar</button>
+
+
+    <div class="article-container">
+
+
+        <h1
+            id="course-title"
+            class="article-title"
+        >
+            Capacitação
+        </h1>
+
+
+
+        <!-- =================================================
+             ETAPA 1
+        ================================================== -->
+
+        <div
+            id="course-step-1"
+            class="article-step"
+        >
+
+            <div class="article-section">
+
+                <h2 id="step-1-title">
+                    Introdução
+                </h2>
+
+                <p id="step-1-text">
+                    Conteúdo da capacitação.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ETAPA 2
+        ================================================== -->
+
+        <div
+            id="course-step-2"
+            class="article-step"
+        >
+
+            <div class="article-section">
+
+                <h2 id="step-2-title">
+                    Fundamentos
+                </h2>
+
+                <p id="step-2-text">
+                    Conteúdo da capacitação.
+                </p>
+
+            </div>
+
+
+            <div class="callout-box">
+
+                <strong>
+                    Conceito importante
+                </strong>
+
+                <p id="step-2-callout">
+                    Este espaço pode receber
+                    uma explicação importante.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ETAPA 3
+        ================================================== -->
+
+        <div
+            id="course-step-3"
+            class="article-step"
+        >
+
+            <div class="article-section">
+
+                <h2 id="step-3-title">
+                    Prática
+                </h2>
+
+                <p id="step-3-text">
+                    Conteúdo da capacitação.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAVEGAÇÃO
+        ================================================== -->
+
+        <div class="article-navigation">
+
+
+            <button
+                id="course-prev"
+                onclick="changeCourseStep(-1)"
+            >
+                Anterior
+            </button>
+
+
+            <button
+                id="course-next"
+                onclick="changeCourseStep(1)"
+            >
+                Próximo
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+
+    <div class="footer-info">
+
+
+        <div
+            class="logo-container"
+            style="margin-bottom:10px;"
+        >
+
+            <img
+                src="logo raitec.png"
+                alt="Logo RAITEC"
+                class="logo-img"
+            >
+
+        </div>
+
+
+        <p>
+            © 2026 RAITEC — Todos os direitos reservados.
+        </p>
+
+
+        <p>
+
+            Contato:
+
+            <a
+                href="mailto:raitec@ufc.br"
+            >
+                raitec@ufc.br
+            </a>
+
+        </p>
+
+
+    </div>
+
+
+    <div class="social-icons">
+
+        <div class="social-icon"></div>
+
+        <div class="social-icon"></div>
+
+        <div class="social-icon"></div>
+
+        <div class="social-icon"></div>
+
+    </div>
+
+
+</footer>
+
+
+</div>
+
+
+<!-- IMPORTAÇÃO DOS SCRIPTS -->
+<script src="js/main.js"></script>
+
+<!-- CAPACITAÇÕES -->
+<script src="js/capacitacoes/python.js"></script>
+<script src="js/capacitacoes/java.js"></script>
+<script src="js/capacitacoes/cpp.js"></script>
+<script src="js/capacitacoes/flutter.js"></script>
+<script src="js/capacitacoes/julia.js"></script>
+<script src="js/capacitacoes/web.js"></script>
+<script src="js/capacitacoes/arduino.js"></script>
+<script src="js/capacitacoes/esp32.js"></script>
+<script src="js/capacitacoes/raspberry.js"></script>
+<script src="js/capacitacoes/git.js"></script>
+<script src="js/capacitacoes/latex.js"></script>
+<script src="js/capacitacoes/canva.js"></script>
+
+<!-- PRATICAR -->
+<!-- PRATICAR -->
+<script src="js/praticar/modulos_inovacao.js"></script>
+<script src="js/praticar/compendio_tecnico.js"></script>
+<script src="js/praticar/projetos_apoio.js"></script>
+
+
+</body>
+
+</html>
+
